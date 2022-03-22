@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import { companies, config } from '../configs';
 
 const loginCompanyController = async (req, res) => {
-  const { cnpj, password } = req.validated;
+  const { cnpj, password } = req.body;
 
   const company = companies.find((companyDB) => companyDB.cnpj === cnpj);
 

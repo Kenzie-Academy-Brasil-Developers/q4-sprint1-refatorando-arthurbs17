@@ -1,9 +1,7 @@
 import { companies } from '../configs';
 
 const deleteCompanyController = (req, res) => {
-  const { cnpj } = req.params;
-
-  const company = companies.filter((companyDB) => companyDB.cnpj !== cnpj);
+  const { company } = req;
 
   const companyIndex = companies.indexOf(company);
 
