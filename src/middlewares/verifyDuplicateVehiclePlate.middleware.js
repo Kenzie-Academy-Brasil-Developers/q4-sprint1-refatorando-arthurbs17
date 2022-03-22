@@ -2,9 +2,9 @@ import { companies } from '../configs';
 
 const verifyDuplicateVehiclePlate = (req, res, next) => {
   const { plate } = req.body;
-
-  const vehicle = companies.some((company) =>
-    company.vehicles.some((vehicleDB) => vehicleDB.plate === plate)
+  const { company } = req;
+  const vehicle = company.vehicles.find(
+    (vehicleDB) => vehicleDB.plate === plate
   );
 
   if (vehicle) {

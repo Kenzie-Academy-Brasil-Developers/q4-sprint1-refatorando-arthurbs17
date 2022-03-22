@@ -3,7 +3,7 @@ const registerVehiclesController = (req, res) => {
 
   const newVehicle = { ...req.validated };
 
-  company.vehicle.push(newVehicle);
+  company.vehicles.push(newVehicle);
 
   return res.status(201).json({
     message: `Vehicle ${newVehicle.model} from year ${newVehicle.year} was acquired to the ${company.name}'s fleet`,
